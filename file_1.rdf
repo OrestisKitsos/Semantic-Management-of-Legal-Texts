@@ -1,0 +1,141 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix example: <http://example.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+example:Article rdfs:subClassOf example:Legal_Element .
+
+example:Chapter rdfs:subClassOf example:Legal_Element .
+
+example:Exception rdfs:subClassOf example:Characteristic .
+
+example:GDPR a example:Legal_Resource;
+  example:consists_of example:Legal_Element .
+
+example:Information rdfs:subClassOf example:Characteristic .
+
+example:Intend rdfs:subClassOf example:Legal_Element .
+
+example:Legal_Element a example:Legal_Element;
+  example:comprises example:GDPR;
+  rdfs:subClassOf example:Legal_Resource .
+
+example:Paragraph rdfs:subClassOf example:Legal_Element .
+
+example:Part_of_Section rdfs:subClassOf example:Section .
+
+example:Reference rdfs:subClassOf example:Characteristic .
+
+example:Section rdfs:subClassOf example:Legal_Element .
+
+example:Subintend rdfs:subClassOf example:Legal_Element .
+
+example:can_be_an rdfs:domain example:Intend, example:Subintend;
+  rdfs:range example:Exception .
+
+example:can_be_modified_by rdfs:domain example:Article;
+  rdfs:range example:Article;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:can_modify .
+
+example:can_make_a rdfs:domain example:Intend, example:Subintend;
+  rdfs:range example:Reference .
+
+example:can_modify rdfs:domain example:Article;
+  rdfs:range example:Article .
+
+example:comprises rdfs:domain example:Legal_Resource, example:Part_of_Section;
+  rdfs:range example:Legal_Element, example:Section;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:consists_of .
+
+example:consists_of rdfs:domain example:Legal_Resource, example:Section;
+  rdfs:range example:Legal_Element, example:Part_of_Section .
+
+example:has_description a <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
+  rdfs:domain example:Article, example:Paragraph;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+example:has_letter a <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
+  rdfs:domain example:Intend, example:Subintend;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+example:has_number a <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
+  rdfs:domain example:Article, example:Chapter, example:Intend, example:Paragraph, example:Section;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#int> .
+
+example:has_title a <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
+  rdfs:domain example:Article, example:Chapter, example:Section;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+example:includes rdfs:domain example:Article, example:Chapter, example:Paragraph;
+  rdfs:range example:Article, example:Intend, example:Section, example:Subintend .
+
+example:is_included_in rdfs:domain example:Article, example:Intend, example:Section,
+    example:Subintend;
+  rdfs:range example:Article, example:Chapter, example:Paragraph;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:includes .
+
+example:is_modified_by rdfs:domain example:Paragraph;
+  rdfs:range example:Exception;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:modifies .
+
+example:is_referred_to rdfs:domain example:Article, example:Paragraph;
+  rdfs:range example:Reference;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:refers_to .
+
+example:modifies rdfs:domain example:Exception;
+  rdfs:range example:Paragraph .
+
+example:refers_to rdfs:domain example:Reference;
+  rdfs:range example:Article, example:Paragraph .
+
+example:e0e1791d-e a example:Chapter;
+  example:has_number "1";
+  example:has_title "Title_1" .
+
+example:43662d62-e a example:Chapter;
+  example:includes example:c1ec9d39-7;
+  example:has_number "50";
+  example:has_title "Title_of_Chapter" .
+
+example:c1ec9d39-7 a example:Article;
+  example:has_number "34";
+  example:has_title "Title_of_Article";
+  example:has_description "This_is_an_Article";
+  example:is_included_in example:43662d62-e;
+  example:is_modified_by example:e97d4f07-5;
+  example:is_referred_to example:Reference_of_c1ec9d39-7 .
+
+example:e97d4f07-5 a example:Article;
+  example:has_number "45";
+  example:has_title "Title_of_second_Article";
+  example:has_description "This_is_the_second_Article";
+  example:modifies example:c1ec9d39-7;
+  example:is_referred_to example:Reference_of_e97d4f07-5 .
+
+example:eab63a13-2 a example:Section;
+  example:has_number "55";
+  example:has_title "Title_of_Section";
+  example:consists_of example:Part_of_Section_Part_of_this_Section .
+
+example:Part_of_Section_Part_of_this_Section a example:Part_of_Section;
+  example:comprises example:eab63a13-2 .
+
+example:3ac7f16b-d a example:Intend;
+  example:has_number "30";
+  example:has_letter "c";
+  example:can_make_a example:Reference_of_e97d4f07-5;
+  example:is_included_in example:6139e157-0 .
+
+example:Reference_of_e97d4f07-5 a example:Reference;
+  example:refers_to example:e97d4f07-5 .
+
+example:6139e157-0 a example:Paragraph;
+  example:includes example:3ac7f16b-d;
+  example:has_number "12";
+  example:has_description "This_is_a_Paragraph";
+  example:is_modified_by example:Exception_of_6139e157-0 .
+
+example:Exception_of_6139e157-0 a example:Exception;
+  example:modifies example:6139e157-0 .
+
+example:Reference_of_c1ec9d39-7 a example:Reference;
+  example:refers_to example:c1ec9d39-7 .

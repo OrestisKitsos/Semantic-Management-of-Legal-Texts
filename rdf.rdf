@@ -1,0 +1,142 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix example: <http://example.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+example:Article rdfs:subClassOf example:Legal_Element .
+
+example:Chapter rdfs:subClassOf example:Legal_Element .
+
+example:Description rdfs:subClassOf example:Characteristic .
+
+example:Description_perigrafi a example:Description;
+  example:describes example:arthro, example:periptosi;
+  example:provides example:Information .
+
+example:Exception rdfs:subClassOf example:Characteristic .
+
+example:GDPR a example:Legal_resource .
+
+example:Information rdfs:subClassOf example:Characteristic .
+
+example:Intend rdfs:subClassOf example:Legal_Element .
+
+example:Legal_Element rdfs:subClassOf example:Legal_resource .
+
+example:Letter rdfs:subClassOf example:Feature .
+
+example:Letter_l a example:Letter .
+
+example:Number rdfs:subClassOf example:Feature .
+
+example:Number_34 a example:Number .
+
+example:Number_45 a example:Number .
+
+example:Number_6 a example:Number .
+
+example:Paragraph rdfs:subClassOf example:Legal_Element .
+
+example:Part_of_section rdfs:subClassOf example:Section .
+
+example:Reference rdfs:subClassOf example:Characteristic .
+
+example:Section rdfs:subClassOf example:Legal_Element .
+
+example:Subintend rdfs:subClassOf example:Legal_Element .
+
+example:Title rdfs:subClassOf example:Feature .
+
+example:Title_Titlos a example:Title;
+  example:is_featured_in example:kefalaio .
+
+example:Title_til a example:Title;
+  example:is_featured_in example:kef .
+
+example:Title_titl a example:Title;
+  example:is_featured_in example:arthro .
+
+example:arthro a example:Article;
+  example:can_have_a example:Description_perigrafi;
+  example:features_a example:Title_titl;
+  example:is_included_in example:kef;
+  example:is_numbered example:Number_6 .
+
+example:can_be_an rdfs:domain example:Intend, example:Subintend;
+  rdfs:range example:Exception .
+
+example:can_be_modified_by rdfs:domain example:Article;
+  rdfs:range example:Article;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:can_modify .
+
+example:can_have_a rdfs:domain example:Article, example:Paragraph;
+  rdfs:range example:Description .
+
+example:can_make_a rdfs:domain example:Intend, example:Subintend;
+  rdfs:range example:Reference .
+
+example:can_modify rdfs:domain example:Article;
+  rdfs:range example:Article .
+
+example:comprise_of rdfs:domain example:Legal_resource, example:Part_of_section;
+  rdfs:range example:Legal_Element, example:Section;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:consists_of .
+
+example:consists_of rdfs:domain example:Legal_resource, example:Section;
+  rdfs:range example:Legal_Element, example:Part_of_section .
+
+example:describes rdfs:domain example:Description;
+  rdfs:range example:Article, example:Paragraph;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:can_have_a .
+
+example:features_a rdfs:domain example:Article, example:Chapter, example:Section;
+  rdfs:range example:Title .
+
+example:includes rdfs:domain example:Article, example:Chapter, example:Paragraph;
+  rdfs:range example:Article, example:Intend, example:Section, example:Subintend .
+
+example:is_featured_in rdfs:domain example:Title;
+  rdfs:range example:Article, example:Chapter, example:Section;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:features_a .
+
+example:is_included_in rdfs:domain example:Article, example:Intend, example:Section,
+    example:Subintend;
+  rdfs:range example:Article, example:Chapter, example:Paragraph;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:includes .
+
+example:is_modified_by rdfs:domain example:Paragraph;
+  rdfs:range example:Exception;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:modifies .
+
+example:is_numbered rdfs:domain example:Article, example:Chapter, example:Intend,
+    example:Paragraph, example:Section, example:Subintend;
+  rdfs:range example:Letter, example:Number .
+
+example:is_provided_by rdfs:domain example:Information;
+  rdfs:range example:Description;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:provides .
+
+example:is_referred_to rdfs:domain example:Article, example:Paragraph;
+  rdfs:range example:Reference;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:refers_to .
+
+example:kef a example:Chapter;
+  example:features_a example:Title_til;
+  example:includes example:arthro;
+  example:is_numbered example:Number_45 .
+
+example:kefalaio a example:Chapter;
+  example:features_a example:Title_Titlos;
+  example:is_numbered example:Number_34 .
+
+example:modifies rdfs:domain example:Exception;
+  rdfs:range example:Paragraph .
+
+example:periptosi a example:Intend;
+  example:can_have_a example:Description_perigrafi;
+  example:is_numbered example:Letter_l .
+
+example:provides rdfs:domain example:Description;
+  rdfs:range example:Information .
+
+example:refers_to rdfs:domain example:Reference;
+  rdfs:range example:Article, example:Paragraph .
