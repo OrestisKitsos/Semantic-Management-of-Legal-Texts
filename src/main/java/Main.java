@@ -26,7 +26,7 @@ public class Main{
 					choice="";
 					continue;
 				}else{ 
-					System.out.println("Error:Invalid choice please enter 'Yes'/'Y' if you want to create a new model or 'No'/'N' if you want to load an existing model");
+					System.out.println("Error:Invalid choice.Please enter 'Yes'/'Y' if you want to create a new model or 'No'/'N' if you want to load an existing model");
 				} 
 			}   
 
@@ -59,8 +59,8 @@ public class Main{
 				RDF_Management.createModel(scanner);
 			}
 
-			// UI Menu 
-			String action="";
+			// UI Menu   
+			String action=""; 
 			while (true){
 				System.out.println("Do you want to add or to remove an element?");
 				action=scanner.nextLine();
@@ -86,7 +86,7 @@ public class Main{
 
 				}else {
 					// Wrong choice
-					System.out.println("Error:Invalid choice. Enter 'Add'/'Remove' for element modification or 'Back' if you want to return to file selection\nEnter 'Exit' if you want to quit");
+					System.out.println("Error:Invalid choice.Enter 'Add'/'Remove' for element modification or 'Back' if you want to return to file selection\nEnter 'Exit' if you want to quit");
 				}
 			}  
 

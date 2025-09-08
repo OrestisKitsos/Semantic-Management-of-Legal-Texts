@@ -1,0 +1,138 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix example: <http://example.org/vocab/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+example:071e2151-5 a example:Section;
+  example:consists_of example:Part_of_Section_071e2151-5;
+  example:has_number "10";
+  example:has_title "First_Section";
+  example:is_included_in example:826ca880-e .
+
+example:23eaf43a-4 a example:Paragraph;
+  example:has_description "This_is_a_Paragraph";
+  example:has_number "3";
+  example:includes example:bbbee01e-c;
+  example:is_modified_by example:Exception_of_23eaf43a-4 .
+
+example:4e8205e9-6 a example:Article;
+  example:has_description "This_is_another_Article";
+  example:has_number "26";
+  example:has_title "Second_Article";
+  example:is_referred_to example:Reference_of_4e8205e9-6;
+  example:modifies example:cdb7c7ff-5 .
+
+example:586c3d46-2 a example:Subintend;
+  example:can_be_an example:Exception_of_23eaf43a-4;
+  example:has_letter "e" .
+
+example:826ca880-e a example:Chapter;
+  example:has_number "7";
+  example:has_title "Second_Chapter";
+  example:includes example:071e2151-5 .
+
+example:Article rdfs:subClassOf example:Legal_Element .
+
+example:Chapter rdfs:subClassOf example:Legal_Element .
+
+example:Exception rdfs:subClassOf example:Characteristic .
+
+example:Exception_of_23eaf43a-4 a example:Exception;
+  example:modifies example:23eaf43a-4 .
+
+example:Intend rdfs:subClassOf example:Legal_Element .
+
+example:Legal_Element a example:Legal_Element;
+  example:comprises example:law;
+  rdfs:subClassOf example:Legal_Resource .
+
+example:Paragraph rdfs:subClassOf example:Legal_Element .
+
+example:Part_of_Section rdfs:subClassOf example:Section .
+
+example:Part_of_Section_071e2151-5 a example:Part_of_Section;
+  example:comprises example:071e2151-5 .
+
+example:Reference rdfs:subClassOf example:Characteristic .
+
+example:Reference_of_4e8205e9-6 a example:Reference;
+  example:refers_to example:4e8205e9-6 .
+
+example:Section rdfs:subClassOf example:Legal_Element .
+
+example:Subintend rdfs:subClassOf example:Legal_Element .
+
+example:bbbee01e-c a example:Intend;
+  example:has_letter "b";
+  example:has_number "12";
+  example:is_included_in example:23eaf43a-4 .
+
+example:can_be_an rdfs:domain example:Intend, example:Subintend;
+  rdfs:range example:Exception .
+
+example:can_make_a rdfs:domain example:Intend, example:Subintend;
+  rdfs:range example:Reference .
+
+example:cdb7c7ff-5 a example:Article;
+  example:has_description "This_is_an_Article";
+  example:has_number "13";
+  example:has_title "First_Article";
+  example:is_included_in example:ed074b58-8;
+  example:is_modified_by example:4e8205e9-6 .
+
+example:comprises rdfs:domain example:Legal_Resource, example:Part_of_Section;
+  rdfs:range example:Legal_Element, example:Section;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:consists_of .
+
+example:consists_of rdfs:domain example:Legal_Resource, example:Section;
+  rdfs:range example:Legal_Element, example:Part_of_Section .
+
+example:d24e766b-d a example:Intend;
+  example:can_make_a example:Reference_of_4e8205e9-6;
+  example:has_letter "c";
+  example:has_number "17" .
+
+example:ed074b58-8 a example:Chapter;
+  example:has_number "5";
+  example:has_title "First_Chapter";
+  example:includes example:cdb7c7ff-5 .
+
+example:has_description a <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
+  rdfs:domain example:Article, example:Paragraph;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+example:has_letter a <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
+  rdfs:domain example:Intend, example:Subintend;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+example:has_number a <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
+  rdfs:domain example:Article, example:Chapter, example:Intend, example:Paragraph, example:Section;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#int> .
+
+example:has_title a <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property>;
+  rdfs:domain example:Article, example:Chapter, example:Section;
+  rdfs:range <http://www.w3.org/2001/XMLSchema#string> .
+
+example:includes rdfs:domain example:Article, example:Chapter, example:Paragraph;
+  rdfs:range example:Article, example:Intend, example:Section, example:Subintend .
+
+example:is_included_in rdfs:domain example:Article, example:Intend, example:Section,
+    example:Subintend;
+  rdfs:range example:Article, example:Chapter, example:Paragraph;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:includes .
+
+example:is_modified_by rdfs:domain example:Article, example:Paragraph;
+  rdfs:range example:Article, example:Exception;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:modifies .
+
+example:is_referred_to rdfs:domain example:Article, example:Paragraph;
+  rdfs:range example:Reference;
+  <http://www.w3.org/2002/07/owl#inverseOf> example:refers_to .
+
+example:law a example:Legal_Resource;
+  example:consists_of example:Legal_Element .
+
+example:modifies rdfs:domain example:Article, example:Exception;
+  rdfs:range example:Article, example:Paragraph .
+
+example:refers_to rdfs:domain example:Reference;
+  rdfs:range example:Article, example:Paragraph .

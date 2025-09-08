@@ -26,7 +26,7 @@ public class RDF_Management{
 
 		model=new TreeModel();
 		// Creating a new legal resource
-		System.out.println("Enter the title for the new RDF Legal Resource:");
+		System.out.println("Enter the title for the Legal Resource of the new RDF model:");
 		String title=scanner.nextLine();
 		System.out.println("Give a name for the new RDF file");
 		String newfilename=scanner.nextLine();
@@ -84,8 +84,6 @@ public class RDF_Management{
 		IRI has_letterIRI=factory.createIRI("http://example.org/vocab/","has_letter");
 		IRI has_titleIRI=factory.createIRI("http://example.org/vocab/","has_title");
 		IRI has_descriptionIRI=factory.createIRI("http://example.org/vocab/","has_description");
-		IRI can_modifyIRI=factory.createIRI("http://example.org/vocab/","can_modify");
-		IRI can_be_modified_byIRI=factory.createIRI("http://example.org/vocab/","can_be_modified_by");
 		IRI consists_ofIRI=factory.createIRI("http://example.org/vocab/","consists_of");
 		IRI comprisesIRI=factory.createIRI("http://example.org/vocab/","comprises");
 		IRI can_be_anIRI=factory.createIRI("http://example.org/vocab/","can_be_an");
@@ -95,8 +93,70 @@ public class RDF_Management{
 		IRI modifiesIRI=factory.createIRI("http://example.org/vocab/","modifies");
 		IRI is_modified_byIRI=factory.createIRI("http://example.org/vocab/","is_modified_by");
 
-		// Creating the properties 
+		// Creating the datatype properties 
 
+		// Chapter has a number
+		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_numberIRI,RDFS.DOMAIN,ChapterRDFClass);
+		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
+
+		// Article has a number
+		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_numberIRI,RDFS.DOMAIN,ArticleRDFClass);
+		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
+
+		// Section has a number
+		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_numberIRI,RDFS.DOMAIN,SectionRDFClass);
+		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
+
+		// Paragraph has a number
+		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_numberIRI,RDFS.DOMAIN,ParagraphRDFClass);
+		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
+
+		// Intend has a number
+		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_numberIRI,RDFS.DOMAIN,IntendRDFClass);
+		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
+
+		// Chapter has a title
+		model.add(has_titleIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_titleIRI,RDFS.DOMAIN,ChapterRDFClass);
+		model.add(has_titleIRI,RDFS.RANGE,XSD_STRING);
+
+		// Article has a title 
+		model.add(has_titleIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_titleIRI,RDFS.DOMAIN,ArticleRDFClass);
+		model.add(has_titleIRI,RDFS.RANGE,XSD_STRING);
+
+		// Section has a title
+		model.add(has_titleIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_titleIRI,RDFS.DOMAIN,SectionRDFClass);
+		model.add(has_titleIRI,RDFS.RANGE,XSD_STRING);
+
+		// Article has a description
+		model.add(has_descriptionIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_descriptionIRI,RDFS.DOMAIN,ArticleRDFClass);
+		model.add(has_descriptionIRI,RDFS.RANGE,XSD_STRING);
+
+		// Paragraph has a description 
+		model.add(has_descriptionIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_descriptionIRI,RDFS.DOMAIN,ParagraphRDFClass);
+		model.add(has_descriptionIRI,RDFS.RANGE,XSD_STRING);
+
+		// Intend has a letter 
+		model.add(has_letterIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_letterIRI,RDFS.DOMAIN,IntendRDFClass);
+		model.add(has_letterIRI,RDFS.RANGE,XSD_STRING);
+
+		// Subintend has a letter
+		model.add(has_letterIRI,RDF.TYPE,RDF.PROPERTY);
+		model.add(has_letterIRI,RDFS.DOMAIN,SubintendRDFClass);
+		model.add(has_letterIRI,RDFS.RANGE,XSD_STRING);
+
+		// Creating the object properties
+		
 		// Chapter includes a Section
 		model.add(includesIRI,RDFS.DOMAIN,ChapterRDFClass);
 		model.add(includesIRI,RDFS.RANGE,SectionRDFClass);
@@ -131,73 +191,12 @@ public class RDF_Management{
 		model.add(is_included_inIRI,OWL.INVERSEOF,includesIRI);
 		model.add(is_included_inIRI,RDFS.DOMAIN,SubintendRDFClass);
 		model.add(is_included_inIRI,RDFS.RANGE,ParagraphRDFClass);
-
-		// Chapter has a number
-		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_numberIRI,RDFS.DOMAIN,ChapterRDFClass);
-		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
-
-		// Article has a number
-		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_numberIRI,RDFS.DOMAIN,ArticleRDFClass);
-		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
-
-		// Section has a number
-		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_numberIRI,RDFS.DOMAIN,SectionRDFClass);
-		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
-
-		// Paragraph has a number
-		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_numberIRI,RDFS.DOMAIN,ParagraphRDFClass);
-		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
-
-		// Intend has a number
-		model.add(has_numberIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_numberIRI,RDFS.DOMAIN,IntendRDFClass);
-		model.add(has_numberIRI,RDFS.RANGE,XSD_INT);
-
-		// Intend has a letter 
-		model.add(has_letterIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_letterIRI,RDFS.DOMAIN,IntendRDFClass);
-		model.add(has_letterIRI,RDFS.RANGE,XSD_STRING);
-
-		// Subintend has a letter
-		model.add(has_letterIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_letterIRI,RDFS.DOMAIN,SubintendRDFClass);
-		model.add(has_letterIRI,RDFS.RANGE,XSD_STRING);
-
-		// Chapter has a title
-		model.add(has_titleIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_titleIRI,RDFS.DOMAIN,ChapterRDFClass);
-		model.add(has_titleIRI,RDFS.RANGE,XSD_STRING);
-
-		// Article has a title 
-		model.add(has_titleIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_titleIRI,RDFS.DOMAIN,ArticleRDFClass);
-		model.add(has_titleIRI,RDFS.RANGE,XSD_STRING);
-
-		// Section has a title
-		model.add(has_titleIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_titleIRI,RDFS.DOMAIN,SectionRDFClass);
-		model.add(has_titleIRI,RDFS.RANGE,XSD_STRING);
-
-		// Article can modify an Article
-		model.add(can_modifyIRI,RDFS.DOMAIN,ArticleRDFClass);
-		model.add(can_modifyIRI,RDFS.RANGE,ArticleRDFClass);
-		model.add(can_be_modified_byIRI,OWL.INVERSEOF,can_modifyIRI);
-		model.add(can_be_modified_byIRI,RDFS.DOMAIN,ArticleRDFClass);
-		model.add(can_be_modified_byIRI,RDFS.RANGE,ArticleRDFClass);
-
-		// Article has a description
-		model.add(has_descriptionIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_descriptionIRI,RDFS.DOMAIN,ArticleRDFClass);
-		model.add(has_descriptionIRI,RDFS.RANGE,XSD_STRING);
-
-		// Paragraph has a description 
-		model.add(has_descriptionIRI,RDF.TYPE,RDF.PROPERTY);
-		model.add(has_descriptionIRI,RDFS.DOMAIN,ParagraphRDFClass);
-		model.add(has_descriptionIRI,RDFS.RANGE,XSD_STRING);
+		// Article modify an Article
+		model.add(modifiesIRI,RDFS.DOMAIN,ArticleRDFClass);
+		model.add(modifiesIRI,RDFS.RANGE,ArticleRDFClass);
+		model.add(is_modified_byIRI,OWL.INVERSEOF,modifiesIRI);
+		model.add(is_modified_byIRI,RDFS.DOMAIN,ArticleRDFClass);
+		model.add(is_modified_byIRI,RDFS.RANGE,ArticleRDFClass);
 
 		// Intend can be an Exception 
 		model.add(can_be_anIRI,RDFS.DOMAIN,IntendRDFClass);
@@ -313,8 +312,8 @@ public class RDF_Management{
 						statement.getSubject()+""+
 						statement.getObject()); 
 			}); 
-		}catch(Exception ex){  
+		}catch(Exception ex){    
 			ex.printStackTrace(); 
-		} 
+		}  
 	}  
 } 
