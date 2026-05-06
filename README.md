@@ -1,5 +1,5 @@
 Semantic Management of Legal Texts
-A Java-based semantic system for modeling, managing, and exploring legal texts using RDF and ontology-driven structures.
+     A Java-based semantic system for modeling, managing, and exploring legal texts using RDF and ontology-driven structures.
 
 📌 Overview
 
