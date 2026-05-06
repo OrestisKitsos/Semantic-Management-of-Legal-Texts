@@ -138,8 +138,11 @@ Law office staff
 
 Researchers in legal informatics and semantic technologies
 
-<img width="601" height="288" alt="Picture2" src="https://github.com/user-attachments/assets/24e2217d-e176-4e14-a925-f8705a4d751d" />
+
+
 <img width="601" height="313" alt="Picture1" src="https://github.com/user-attachments/assets/ab5386be-ef40-4115-99bf-fbbd6e724d86" />
+<img width="601" height="288" alt="Picture2" src="https://github.com/user-attachments/assets/24e2217d-e176-4e14-a925-f8705a4d751d" />
+
 
 📜 License
 
