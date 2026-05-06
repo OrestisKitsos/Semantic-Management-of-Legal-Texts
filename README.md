@@ -4,7 +4,10 @@ A Java-based semantic system for modeling, managing, and exploring legal texts u
 
 📌 Overview
 
-This project is part of a thesis on Semantic Management of Legal Texts.  It implements a semantic management system written in Java, built with Eclipse as a Maven project, and using the RDF4J framework to handle RDF data.The system allows legal professionals (e.g., lawyers, legal clerks) to create, manage, and extend RDF models that represent legal resources such as laws, statutes, and legal provisions.  
+This project is part of a thesis on Semantic Management of Legal Texts.  
+
+It implements a semantic management system written in Java, built with Eclipse as a Maven project, and using the RDF4J framework to handle RDF data.The system allows legal professionals (e.g., lawyers, legal clerks) to create, manage, and extend RDF models that represent legal resources such as laws, statutes, and legal provisions.  
+
 All models are stored in Turtle (TTL) format and can be explored with ontology tools such as Protégé.
 
 ⚙️ Technologies Used
