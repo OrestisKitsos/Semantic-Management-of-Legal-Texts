@@ -41,7 +41,7 @@ public class Main{
 
 				// Checking if the file exists
 				if(new File(currentFileName).exists()) {
-					//Loading the existing model
+					//Loading the existing model 
 					RDF_Management.loadModel(currentFileName);
 				}else{ 
 					System.out.println("Error:The file "+ currentFileName+" does not exist.You need to create a new file");
@@ -61,7 +61,7 @@ public class Main{
 
 			// UI Menu   
 			String action=""; 
-			while (true){
+			while (true){ 
 				System.out.println("Do you want to add or to remove an element?");
 				action=scanner.nextLine();
 
