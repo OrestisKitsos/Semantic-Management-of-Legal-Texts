@@ -92,7 +92,7 @@ Type Back to return to the previous menu
 
 
 
-   ▶️ How to Run
+▶️ How to Run
 
 1. Clone the repository:
 
@@ -138,7 +138,7 @@ class hierarchy, and relationships between legal entities as visualized in Prot�
   <img width="717" height="374" alt="Screenshot (131)" src="https://github.com/user-attachments/assets/2f30caa6-c4f7-48d7-bbb1-df4e82377d13"/>
 
 
-  🚀 Future Improvements
+🚀 Future Improvements
 
 Currently, the system operates via terminal interaction.
 A proposed improvement is the development of a front-end application (web-based or desktop) to provide:
@@ -151,7 +151,8 @@ Drag-and-drop management of relationships
 
 Better integration with existing legal information systems
 
-  👤 Target Users
+
+👤 Target Users
 
 Lawyers
 
@@ -161,7 +162,8 @@ Law office staff
 
 Researchers in legal informatics and semantic technologies
 
-  📜 License
+
+📜 License
 
 This project is licensed under the MIT License.
 You are free to use, modify, and distribute it with proper attribution.
