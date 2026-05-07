@@ -139,6 +139,7 @@ class hierarchy, and relationships between legal entities as visualized in ProtÃ
 
 
 
+
 ğŸš€ Future Improvements
 
 Currently, the system operates via terminal interaction.
