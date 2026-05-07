@@ -91,7 +91,6 @@ Type Exit to close the system
 Type Back to return to the previous menu  
 
 
-   
    ▶️ How to Run
 
 1. Clone the repository:
