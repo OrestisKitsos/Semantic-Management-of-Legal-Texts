@@ -121,21 +121,21 @@ It can be opened and visualized with Protégé to explore classes, datatype prop
 
 The following screenshots demonstrate the RDF ontology structure,
 class hierarchy, and relationships between legal entities as visualized in Protégé.
-```
+
 
 RDF Class Hierarchy:
 
-<img width="601" height="313" alt="Picture1" src="https://github.com/user-attachments/assets/ab5386be-ef40-4115-99bf-fbbd6e724d86" />
+<img width="714" height="333" alt="Screenshot (132)" src="https://github.com/user-attachments/assets/d20dd288-341c-4231-8c5e-122c51f5766d" />
 
 RDF Relationships:
 
-<img width="601" height="288" alt="Picture2" src="https://github.com/user-attachments/assets/24e2217d-e176-4e14-a925-f8705a4d751d" />
+<img width="714" height="295" alt="Screenshot (133)" src="https://github.com/user-attachments/assets/4ea150be-72e1-46a4-b8d8-adadc6e8a5b6" />
 
 RDF Entities:
 
 <img width="717" height="374" alt="Screenshot (131)" src="https://github.com/user-attachments/assets/2f30caa6-c4f7-48d7-bbb1-df4e82377d13" />
 
-```
+
 
 🚀 Future Improvements
 
