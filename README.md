@@ -93,16 +93,16 @@ Type Back to return to the previous menu
 
 ▶️ How to Run
 
-  1. Clone the repository:
+1. Clone the repository:
 
    - git clone https://github.com/OrestisKitsos/Semantic-Management-of-Legal-Texts.git
    - cd Semantic-Management-of-Legal-Texts
 
-  2. Build the project:
+2. Build the project:
 
    - mvn clean install
 
-  3. Run the application:
+3. Run the application:
 
    - mvn exec:java
 
