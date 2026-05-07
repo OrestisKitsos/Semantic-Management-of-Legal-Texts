@@ -88,7 +88,7 @@ Type Remove to delete an element
 
 Type Exit to close the system
 
- Type Back to return to the previous menu  
+  Type Back to return to the previous menu  
 
 
 
