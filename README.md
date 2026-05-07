@@ -128,14 +128,17 @@ RDF Class Hierarchy:
 <img width="714" height="333" alt="Screenshot (132)" src="https://github.com/user-attachments/assets/d20dd288-341c-4231-8c5e-122c51f5766d" />
 
 
+
 RDF Relationships:
 
 <img width="714" height="295" alt="Screenshot (133)" src="https://github.com/user-attachments/assets/4ea150be-72e1-46a4-b8d8-adadc6e8a5b6" />
 
 
+
 RDF Entities:
 
 <img width="717" height="374" alt="Screenshot (131)" src="https://github.com/user-attachments/assets/2f30caa6-c4f7-48d7-bbb1-df4e82377d13" />
+
 
 
 
