@@ -92,7 +92,7 @@ Type Back to return to the previous menu
 
 
 
-▶️ How to Run
+   ▶️ How to Run
 
 1. Clone the repository:
 
