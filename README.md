@@ -125,7 +125,7 @@ class hierarchy, and relationships between legal entities as visualized in Prot√
 
 - RDF Class Hierarchy:
 
-!(<img width="714" height="333" alt="Screenshot (132)" src="https://github.com/user-attachments/assets/d20dd288-341c-4231-8c5e-122c51f5766d"/>)
+<img width="714" height="333" alt="Screenshot (132)" src="https://github.com/user-attachments/assets/d20dd288-341c-4231-8c5e-122c51f5766d"/>
 
 
 - RDF Relationships:
